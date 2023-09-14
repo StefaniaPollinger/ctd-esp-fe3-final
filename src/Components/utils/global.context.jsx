@@ -44,8 +44,8 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
       axios(url)
       .then(res => {
-          console.log(res.data.results)
-          dispatch({type: 'GET_DATA', payload: res.data.results})})
+          console.log(res.data)
+          dispatch({type: 'GET_DATA', payload: res.data})})
       .catch(err => console.log(err))
   }, [])
 
@@ -54,7 +54,7 @@ export const ContextProvider = ({ children }) => {
   }, [state.favs])
   
   return (
-    <ContextGlobal.Provider value={{dispatch, state}}>
+    <ContextGlobal.Provider value={{state, dispatch}}>
       {children}
     </ContextGlobal.Provider>
   );

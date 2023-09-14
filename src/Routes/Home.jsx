@@ -10,7 +10,10 @@ const Home = () => {
 
   return (
     <div>
-    {state.data.map(data => <Card detail={detail} key={detail.id}/>)}
+      <h1>Home</h1>
+      <div className="card-grid">
+    {state.data.map(data => <Card data={data} key={data.id}/>)}
+    </div>
     </div>
   )
 }

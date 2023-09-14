@@ -3,15 +3,15 @@ import { Link } from 'react-router-dom'
 import { useContextGlobal } from './utils/global.context'
 
 
-const Card = ({char}) => {
+const Card = ({data}) => {
 
   const {dispatch} = useContextGlobal()
   const addFav = () => {
-      dispatch({type: 'ADD_FAV', payload: detail})
+      dispatch({type: 'ADD_FAV', payload: data})
   }
 return (
-  <div>
-      <Link to={'/detail/' + detail.id}>
+  <div className="card">
+      <Link to={'/detail/' + data.id}>
       {/* <Link to={`/detail/${detail.id}`}> */}
           <h3>{data.name}</h3>
           <img src="/img/doctor.jpg" alt="Imagen del doctor"/>
