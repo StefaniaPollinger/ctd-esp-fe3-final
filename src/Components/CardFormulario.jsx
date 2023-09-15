@@ -1,7 +1,7 @@
-const CardFormulario = ({nombreProp, apellidoProp}) => {
+const CardFormulario = ({nombreProp, emailProp}) => {
 
 
-    return <div>Hola, {nombreProp} {apellidoProp} fuiste ingresado</div>;
+    return <div>Hola, {nombreProp} {emailProp} fuiste ingresado</div>;
 };
 
 

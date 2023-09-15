@@ -2,12 +2,16 @@ import axios from 'axios'
 import {createContext, useContext, useState, useReducer, useEffect} from 'react'
 import { useParams } from 'react-router-dom'
 
+const localFavs = JSON.parse(localStorage.getItem('favs'))
+const initialFavState = localFavs ? localFavs : []
+
+
 //Declaracion del estado inicial
 export const initialState = {
   data: [],
   detail: {},
-  favs: [],
-  //favs: initialFavState,
+  //favs: [],
+  favs: initialFavState,
   theme: true,
 }
 
@@ -52,7 +56,8 @@ export const ContextProvider = ({ children }) => {
   useEffect(() => {
       localStorage.setItem('favs', JSON.stringify(state.favs))
   }, [state.favs])
-  
+
+   
   return (
     <ContextGlobal.Provider value={{state, dispatch}}>
       {children}

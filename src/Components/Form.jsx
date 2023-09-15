@@ -7,7 +7,7 @@ const Form = () => {
 
  //Declaracion de hooks
  const [nombre, setNombre] = useState('');
- const [apellido, setApellido] = useState('');
+ const [email, setemail] = useState('');
  const [mensajeError, setMensajeError] = useState('');
  const [mostrarCard, setMostrarCard] = useState(false);
 
@@ -24,7 +24,7 @@ const Form = () => {
    return;
  }
 
- if (apellido.length < 6) {
+ if (email.length < 6) {
    setMensajeError ('Por favor chequea que la información sea correcta');
    setMostrarCard (false);
 
@@ -56,12 +56,12 @@ setMensajeError ('');
           />
         </div>
         <div>
-          <label htmlFor="apellido">Apellido:</label>
+          <label htmlFor="email">Email:</label>
           <input
             type="text"
-            id="apellido"
-            value={apellido}
-            onChange={(e) => setApellido(e.target.value)}
+            id="email"
+            value={email}
+            onChange={(e) => setemail(e.target.value)}
             required
           />
         </div>
@@ -74,7 +74,7 @@ setMensajeError ('');
 
  {/*Si mostrarCard esta en true, renderizo el componente card*/}
 
- {mostrarCard && <CardFormulario nombreProp={nombre} apellidoProp={apellido} />} 
+ {mostrarCard && <CardFormulario nombreProp={nombre} emailProp={email} />} 
 
 
     </div>
